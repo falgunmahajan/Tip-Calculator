@@ -8,10 +8,11 @@ range.addEventListener("change",tipAmount)
 
 function tipAmount() {
     
-    const amount = document.querySelector("#amount").value;
+    const amount = +(document.querySelector("#amount").value);
     const tipPercentage = range.value;
     document.querySelector(".tip").innerHTML = `${tipPercentage}%`;
-    const tip = amount * tipPercentage / 100;
+    
+    const tip = amount+(amount * tipPercentage / 100);
     document.querySelector("#Original-amount").value = amount;
     document.querySelector("#Tip-amount").value = tip;
 }
